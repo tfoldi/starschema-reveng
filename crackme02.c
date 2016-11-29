@@ -3,7 +3,7 @@
 
 int check_password(const char * password, size_t len)
 {
-  const int pass[6] = { 0x79, 0x6f, 0x6d, 0x61, 0x6d, 0x61 };
+  const char * pass = "yomama";
 
   while (len--)
     if (password[len] != pass[5 - len]) 
@@ -20,7 +20,7 @@ int main() {
 
   scanf("%20s", input);
   
-  if ((len = strlen(input)) > 6)
+  if ((len = strlen(input)) != 6)
     return -1; 
 
   if (check_password(input,len) != 0) {
